@@ -3,4 +3,5 @@ compile_commands.json
 bulk
 repeat
 random
-mmap_anon
+mmap_bulk
+mmap_bulk_populate

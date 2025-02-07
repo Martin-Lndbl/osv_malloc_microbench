@@ -1,3 +1,5 @@
 /bulk: ${MODULE_DIR}/bulk
 /repeat: ${MODULE_DIR}/repeat
 /random: ${MODULE_DIR}/random
+/mmap_bulk: ${MODULE_DIR}/mmap_bulk
+/mmap_bulk_populate: ${MODULE_DIR}/mmap_bulk_populate
