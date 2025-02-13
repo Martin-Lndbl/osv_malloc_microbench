@@ -5,3 +5,5 @@
 /mmap_bulk_populate: ${MODULE_DIR}/mmap_bulk_populate
 
 /je_bulk: ${MODULE_DIR}/je_bulk
+/je_random: ${MODULE_DIR}/je_random
+/je_repeat: ${MODULE_DIR}/je_repeat

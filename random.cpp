@@ -27,6 +27,7 @@ void random_worker(unsigned core_id, std::vector<void *> &pages,
     start = rdtsc();
     for (size_t j = 0; j < to_free[0].size(); ++j) {
       pages[to_free[i][j]] = _alloc(size);
+      *reinterpret_cast<uint64_t *>(pages[to_free[i][j]]) = 5;
     }
     end = rdtsc();
     alloc_time[i] = end - start;
