@@ -9,6 +9,16 @@
 
 namespace benchmark {
 
+#ifdef JEMALLOC
+    #include <jemalloc.h>
+    #define alloc(size) je_malloc(size)
+    #define free(size) je_free(size)
+#else
+    #define alloc(size) malloc(size)
+    #define free(size) free(size)
+#endif
+
+
 inline static void* alloc_page() { return malloc(4096); }
 inline static void free_page(void* ptr) { free(ptr); }
 

@@ -5,3 +5,4 @@ repeat
 random
 mmap_bulk
 mmap_bulk_populate
+je_bulk

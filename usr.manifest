@@ -3,3 +3,5 @@
 /random: ${MODULE_DIR}/random
 /mmap_bulk: ${MODULE_DIR}/mmap_bulk
 /mmap_bulk_populate: ${MODULE_DIR}/mmap_bulk_populate
+
+/je_bulk: ${MODULE_DIR}/je_bulk
