@@ -7,17 +7,17 @@
 #define SEED 0
 #define RANDOM_MEM_FACTOR 100
 
-namespace benchmark {
-
 #ifdef JEMALLOC
     #include <jemalloc.h>
-    #define alloc(size) je_malloc(size)
-    #define free(size) je_free(size)
+    #define _alloc(size) je_malloc(size)
+    #define _free(size) je_free(size)
 #else
     #define _alloc(size) malloc(size)
     #define _free(size) free(size)
 #endif
 
+
+namespace benchmark {
 
 inline static void* alloc_page() { return malloc(4096); }
 inline static void free_page(void* ptr) { free(ptr); }
