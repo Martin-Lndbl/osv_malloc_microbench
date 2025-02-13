@@ -14,8 +14,8 @@ namespace benchmark {
     #define alloc(size) je_malloc(size)
     #define free(size) je_free(size)
 #else
-    #define alloc(size) malloc(size)
-    #define free(size) free(size)
+    #define _alloc(size) malloc(size)
+    #define _free(size) free(size)
 #endif
 
 

@@ -3,7 +3,7 @@ src= ../..
 .PHONY: micro all clean
 module: micro
 
-TARGETS = bulk random repeat mmap_bulk mmap_bulk_populate je_bulk
+TARGETS = bulk random repeat mmap_bulk mmap_bulk_populate je_bulk je_random je_repeat
 
 CXXFLAGS = -std=c++20 -g -shared
 JE_FLAGS = -I $(src)/modules/jemalloc/upstream/jemalloc/include/jemalloc -DJEMALLOC $(CXXFLAGS)

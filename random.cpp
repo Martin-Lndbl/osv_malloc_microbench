@@ -19,14 +19,14 @@ void random_worker(unsigned core_id, std::vector<void *> &pages,
   for (size_t i = 0; i < to_free.size(); ++i) {
     start = rdtsc();
     for (size_t j = 0; j < to_free[0].size(); ++j) {
-      free_page(pages[to_free[i][j]]);
+      _free(pages[to_free[i][j]]);
     }
     end = rdtsc();
     free_time[i] = end - start;
 
     start = rdtsc();
     for (size_t j = 0; j < to_free[0].size(); ++j) {
-      pages[to_free[i][j]] = malloc(size);
+      pages[to_free[i][j]] = _alloc(size);
     }
     end = rdtsc();
     alloc_time[i] = end - start;
@@ -41,7 +41,7 @@ void random_worker(unsigned core_id, std::vector<void *> &pages,
 // Allocate pages for initial setup
 void populate_pages(std::vector<void *> &pages, size_t size) {
   for (auto &page : pages) {
-    page = malloc(size);
+    page = _alloc(size);
     if (!page) {
       std::exit(EXIT_FAILURE);
     }
@@ -132,7 +132,7 @@ int main(int argc, char *argv[]) {
 
   for (auto page : pages) {
     if (page)
-      benchmark::free_page(page);
+      _free(page);
   }
 
   return 0;
