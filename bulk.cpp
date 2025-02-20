@@ -1,4 +1,5 @@
 #include "benchmark.h"
+// #include "osv/mempool.hh"
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
@@ -34,6 +35,8 @@ void bulk_worker(unsigned core_id, size_t const measurements, size_t const granu
         alloc_time[i] = end - start;
     }
 
+    // printf("free: 0x%lx\n", memory::stats::free());
+
     for (size_t i = 0; i < measurements; ++i) {
         start = rdtsc();
         for (size_t j = 0; j < granularity; ++j) {
@@ -48,25 +51,6 @@ void bulk_worker(unsigned core_id, size_t const measurements, size_t const granu
 
 int main(int argc, char* argv[])
 {
-
-//     void* handle = dlopen("/usr/lib/libjemalloc.so", RTLD_NOW | RTLD_GLOBAL);
-//     if (!handle) {
-//         std::cerr << "dlopen failed: " << dlerror() << std::endl;
-//         return 1;
-//     }
-//     void* je_malloc_ptr = dlsym(handle, "je_malloc");
-// if (!je_malloc_ptr) {
-//     std::cerr << "dlsym failed: " << dlerror() << std::endl;
-// } else {
-//     std::cout << "je_malloc loaded successfully!" << std::endl;
-// }
-// void (*init)();
-// *(void **)(&init) = dlsym(handle, "je_malloc");
-// if (init) {
-//     init(); // Explicitly initialize jemalloc
-// }
-
-
     size_t measurements{4096};
     size_t granularity{128};
     size_t threads{1};
@@ -107,9 +91,9 @@ int main(int argc, char* argv[])
         res_alloc[m] /= threads * granularity;
         res_free[m] /= threads * granularity;
         std::cout << res_alloc[m];
-        // std::cout << res_free[m];
+        std::cout << std::endl;
+        std::cout << res_free[m];
         std::cout << std::endl;
     }
-
     return 0;
 }

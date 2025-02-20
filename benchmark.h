@@ -11,6 +11,7 @@
     #include <jemalloc.h>
     #define _alloc(size) je_malloc(size)
     #define _free(size) je_free(size)
+    const char *je_malloc_conf = "percpu_arena:percpu,background_thread:false,tcache:false,abort_conf:true";
 #else
     #define _alloc(size) malloc(size)
     #define _free(size) free(size)

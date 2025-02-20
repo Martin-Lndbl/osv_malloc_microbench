@@ -127,7 +127,8 @@ int main(int argc, char *argv[]) {
     res_alloc /= threads * granularity;
     res_free /= threads * granularity;
     std::cout << res_alloc;
-    // std::cout << res_free;
+    std::cout << std::endl;
+    std::cout << res_free;
     std::cout << std::endl;
   }
 

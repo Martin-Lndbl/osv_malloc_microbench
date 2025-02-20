@@ -5,7 +5,9 @@ module: micro
 
 TARGETS = bulk random repeat mmap_bulk mmap_bulk_populate je_bulk je_random je_repeat
 
-CXXFLAGS = -std=c++20 -g -shared -O0
+CXXFLAGS = -std=c++20 -g -O1
+CXXFLAGS += -I../../. -I../../include -I../../arch/x64/
+CXXFLAGS += -I../../build/release/gen/include
 JE_FLAGS = -I $(src)/modules/jemalloc/upstream/jemalloc/include/jemalloc -DJEMALLOC $(CXXFLAGS)
 
 all: micro

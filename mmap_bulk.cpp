@@ -43,7 +43,6 @@ void mmap_bulk_worker(unsigned core_id, size_t const measurements, size_t const 
 
 int main(int argc, char* argv[])
 {
-
     size_t measurements{1};
     size_t granularity{2};
     size_t threads{1};
