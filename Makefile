@@ -3,7 +3,7 @@ src= ../..
 .PHONY: micro all clean
 module: micro
 
-TARGETS = bulk random repeat mmap_bulk mmap_bulk_populate je_bulk je_random je_repeat
+TARGETS = bulk random pipeline repeat memory mmap_bulk mmap_bulk_populate je_bulk je_random je_pipeline je_repeat je_memory
 
 CXXFLAGS = -std=c++20 -g -O1
 CXXFLAGS += -I../../. -I../../include -I../../arch/x64/

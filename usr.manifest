@@ -1,9 +1,13 @@
 /bulk: ${MODULE_DIR}/bulk
 /repeat: ${MODULE_DIR}/repeat
+/pipeline: ${MODULE_DIR}/pipeline
 /random: ${MODULE_DIR}/random
+/memory: ${MODULE_DIR}/memory
 /mmap_bulk: ${MODULE_DIR}/mmap_bulk
 /mmap_bulk_populate: ${MODULE_DIR}/mmap_bulk_populate
 
 /je_bulk: ${MODULE_DIR}/je_bulk
 /je_random: ${MODULE_DIR}/je_random
+/je_pipeline: ${MODULE_DIR}/je_pipeline
 /je_repeat: ${MODULE_DIR}/je_repeat
+/je_memory: ${MODULE_DIR}/je_memory

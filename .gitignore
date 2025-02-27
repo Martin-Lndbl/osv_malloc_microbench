@@ -3,8 +3,12 @@ compile_commands.json
 bulk
 repeat
 random
+memory
+pipeline
 mmap_bulk
 mmap_bulk_populate
 je_bulk
 je_random
 je_repeat
+je_memory
+je_pipeline
